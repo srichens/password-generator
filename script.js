@@ -25,14 +25,11 @@ function generatePassword() {
   let chosenUpper = upperValue[Math.floor(Math.random() * upperValue.length)]
   let chosenLower = lowerValue[Math.floor(Math.random() * lowerValue.length)]
 
-  console.log(chosenSpeChar);
-  console.log(chosenNum);
-  console.log(chosenUpper);
-  console.log(chosenLower);
-  
+  return chosenSpeChar + chosenNum + chosenUpper + chosenLower
+    
    }
 
-
+console.log(generatePassword());
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
