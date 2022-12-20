@@ -64,16 +64,16 @@ function generatePassword() {
   console.log (charArray);*/
   
   function charPrompt() {
-    speChar = confirm("Special characters? Press Ok for Yes or Cancel for No");
+    speChar = confirm("Include special characters? Press Ok for Yes or Cancel for No");
     num = confirm("Include numbers? Press Ok for Yes or Cancel for No");
     upper = confirm("Include uppercase? Press Ok for Yes or Cancel for No");
     lower = confirm("Include lowercase? Press Ok for Yes or Cancel for No");
 
-    let charArray = [speChar, num, upper, lower];
+    //let charArray = [speChar, num, upper, lower];
 
-  if (speChar == false && num == false && upper == false && lower == false) {alert("You must chose at least one character choice"); charPrompt();} else {console.log(charArray);};
-
-  console.log (charArray);
+  while (speChar == false && num == false && upper == false && lower == false) {alert("You must chose at least one character choice"); charPrompt();} 
+  //if (speChar == false && num == false && upper == false && lower == false) {alert("You must chose at least one character choice"); charPrompt();} else {console.log(charArray);};
+  //console.log (charArray);
 
   }
 
