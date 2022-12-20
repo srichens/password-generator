@@ -10,17 +10,29 @@ function writePassword() {
 }
 
 function generatePassword() {
+  let passLength = 0;
+  passLength = Number(passLength);
+  let speChar = 0;
+  let num = 0;
+  let upper = 0;
+  let lower = 0;
+
+  /*let passLength = passPrompt();
+  passPrompt();*/
   
   passPrompt();
-
  
   /*let passLength = prompt("How long would you like your password to be? Choose a number between 8 and 128");
   passLength = Number(passLength);*/
 
   function passPrompt() {
-  let passLength = prompt("How long would you like your password to be? Choose a number between 8 and 128");
-  passLength = Number(passLength);
+  passLength = prompt("How long would you like your password to be? Choose a number between 8 and 128");
+  passLength = Number(passLength);  
+  while (passLength < 8 || passLength > 128 || isNaN(passLength)) {passLength = prompt("Please choose a number between 8 and 128");} 
   }
+  
+  console.log(typeof passLength);
+  
 
   /*let passLength = prompt("How long would you like your password to be? Choose a number between 8 and 128");
   passLength = Number(passLength);*/
@@ -43,13 +55,25 @@ function generatePassword() {
   /*let speChar = confirm("Special characters? Press Ok for Yes or Cancel for No");
   let num = confirm("Include numbers? Press Ok for Yes or Cancel for No");
   let upper = confirm("Include uppercase? Press Ok for Yes or Cancel for No");
-  let lower = confirm("Include lowercase? Press Ok for Yes or Cancel for No");*/
+  let lower = confirm("Include lowercase? Press Ok for Yes or Cancel for No");
+
+  let charArray = [speChar, num, upper, lower];
+
+  if (charArray = [false, false, false, false]) {alert("You must chose at least one character choice");};
+
+  console.log (charArray);*/
   
   function charPrompt() {
-    let speChar = confirm("Special characters? Press Ok for Yes or Cancel for No");
-    let num = confirm("Include numbers? Press Ok for Yes or Cancel for No");
-    let upper = confirm("Include uppercase? Press Ok for Yes or Cancel for No");
-    let lower = confirm("Include lowercase? Press Ok for Yes or Cancel for No");
+    speChar = confirm("Special characters? Press Ok for Yes or Cancel for No");
+    num = confirm("Include numbers? Press Ok for Yes or Cancel for No");
+    upper = confirm("Include uppercase? Press Ok for Yes or Cancel for No");
+    lower = confirm("Include lowercase? Press Ok for Yes or Cancel for No");
+
+    let charArray = [speChar, num, upper, lower];
+
+  if (speChar == false && num == false && upper == false && lower == false) {alert("You must chose at least one character choice"); charPrompt();} else {console.log(charArray);};
+
+  console.log (charArray);
 
   }
 
@@ -58,12 +82,17 @@ function generatePassword() {
   const upperValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lowerValue = "abcdefghijklmnopqrstuvwxyz";
 
+  if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
+  if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
+  if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
+  if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
+
   
   
-  speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];
+  /*speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];
   num = numValue[Math.floor(Math.random() * numValue.length)];
   upper = upperValue[Math.floor(Math.random() * upperValue.length)];
-  lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];
+  lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];*/
 
   /*for (let i = 0; i < passLength; i++) {}*/
 
