@@ -18,6 +18,8 @@ function generatePassword() {
   let upper = 0;
   let lower = 0;
   
+
+  
   passPrompt();
  
   function passPrompt() {
@@ -41,13 +43,81 @@ function generatePassword() {
   const upperValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lowerValue = "abcdefghijklmnopqrstuvwxyz";
 
-  if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
+  charJoin();
+
+  function charJoin() {
+    if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
+    if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
+    if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
+    if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
+        
+  }
+  let chosenPassword = [speChar + num + upper + lower];
+  
+  console.log(chosenPassword);
+ 
+  console.log(chosenPassword.length);
+  
+
+  /*charAdd();
+
+  function charAdd() {
+    if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
+    if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
+    if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
+    if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
+  
+    let addCharacters = [speChar + num + upper + lower];
+     
+    console.log(addCharacters);
+  }
+
+  console.log(addCharacters);*/
+
+  //if (chosenPassword.length < passLength) {newPass = chosenPassword.push[0]};
+
+  //let newPass = chosenPassword.push[0];
+
+  //console.log(newPass);
+
+
+ 
+
+  /*if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
   if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
   if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
   if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
 
+  let chosenPassword = [speChar, num, upper, lower];
+
+  console.log(chosenPassword);
+  console.log(chosenPassword.length); */ 
+
+  /*createPass();
+
+  function createPass() {
+    while (chosenPassword.length < passLength) {newPass = charJoin() }
+  }
+ console.log(newPass);*/
+  /*let chosenPassword = [speChar, num, upper, lower];
+
+  console.log(chosenPassword);
+  console.log(chosenPassword.length);*/
+
+  /*createPass();
+
+  function createPass(){
+    let i = chosenPassword.length;
+    console.log(i);
+    for (let i = 0; i < chosenPassword.length; i++); 
+    console.log(chosenPassword[i]);
+    //newPassword = chosenPassword[Math.floor(Math.random() * passLength)];
+  }*/
+  console.log(passLength);
+
+
     
-  return speChar + num + upper + lower;
+  //return speChar + num + upper + lower;
 }
  
 
