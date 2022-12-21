@@ -32,16 +32,16 @@ function generatePassword() {
     
   function charPrompt() {
     speChar = confirm("Include special characters? Press Ok for Yes or Cancel for No");
-    if (speChar) {alert("Your password will include special characters")} 
+    if (speChar) {alert("Your password will include special characters")}
       else {alert( "Your password will NOT include special characters")};
     num = confirm("Include numbers? Press Ok for Yes or Cancel for No");
-    if (speChar) {alert("Your password will include numbers")} 
+    if (num) {alert("Your password will include numbers")} 
       else {alert( "Your password will NOT include numbers")};
     upper = confirm("Include uppercase letters? Press Ok for Yes or Cancel for No");
-    if (speChar) {alert("Your password will include uppercase letters")} 
+    if (upper) {alert("Your password will include uppercase letters")} 
       else {alert( "Your password will NOT include uppercase letters")};
     lower = confirm("Include lowercase letters? Press Ok for Yes or Cancel for No");
-    if (speChar) {alert("Your password will include lowercase letters")} 
+    if (lower) {alert("Your password will include lowercase letters")} 
       else {alert( "Your password will NOT include lowercase letters")};
     while (speChar == false && num == false && upper == false && lower == false) {alert("You must chose at least one character choice"); charPrompt();} 
   }
@@ -90,7 +90,7 @@ function generatePassword() {
   if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
   if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
   
-  let chosenValues = [ speChar + num + upper + lower];
+  let chosenValues = [ speChar,  num, upper, lower];
 
   console.log (chosenValues);
 
