@@ -42,14 +42,29 @@ function generatePassword() {
     while (speChar == false && num == false && upper == false && lower == false) {alert("You must chose at least one character choice"); charPrompt();} 
   }
   
-  const speCharValue = ["!", "#", "$", "%", "&", "*", "_", "-", "^", "@"];
-  const numValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  const upperValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  const lowerValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var speCharValue = ["!", "#", "$", "%", "&", "*", "_", "-", "^", "@"];
+  var numValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var upperValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var lowerValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-  if ((speChar) && (num) && (upper) && (lower)) {chosenChar = [speCharValue, numValue, upperValue, lowerValue]};
+  if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
+  if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
+  if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
+  if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
+  
+  let chosenValues = [ speChar, num, upper, lower];
 
-  console.log(chosenChar);
+  console.log(chosenValues);
+
+  /*if (speChar && num && upper && lower) {chosenChar = speCharValue += numValue += upperValue += lowerValue} else {console.log("no password");}
+
+  var chosenPassword = "";
+
+  for (var i = 0; i < passLength; i++) {
+    var chosenPassword = chosenChar[Math.floor(Math.random() * chosenChar.length)]
+  };
+
+  console.log(chosenPassword);*/
 
   //original code-----
 
