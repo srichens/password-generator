@@ -13,6 +13,7 @@ function writePassword() {
 //------------------my added code below: wrote function generatePassword() that is called above----------------
 
 function generatePassword() {
+  
   // password prompt that requires certain length (*fullfills acceptance criteria*)
   let passLength = prompt("How long would you like your password to be? Choose a number between 8 and 128");
   passLength = Number(passLength);  
