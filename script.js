@@ -55,8 +55,11 @@ function generatePassword() {
     
   let charAdds = "";
 
-  if (speChar) {charAdds = "!#$%&*_-^@0"} else if (num) {charAdds = "0123456789"}
-  else if (upper) {charAdds = "ABCDEFGHIJ"}
+  if (speChar && upper) {charAdds = "!#$%&*_-^@ABCDEFGHIJKLMNOPQRSTUVWXYZ"} 
+  else if (num && lower ) {charAdds = "0123456789abcdefghijklmnopqrstuvwxyz"}
+  else if (speChar) {charAdds = "!#$%&*_-^@"} 
+  else if (num) {charAdds = "0123456789"}
+  else if (upper) {charAdds = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
   else {charAdds = "abcdefghijklmnopqrstuvwxyz"};
 
   console.log(charAdds);
