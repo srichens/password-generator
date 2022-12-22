@@ -41,21 +41,21 @@ function generatePassword() {
     while (speChar == false && num == false && upper == false && lower == false) {alert("You must chose at least one character choice"); charPrompt();} 
   }
   
-  // set value of character choices; originally had them each as a big string, but changed to an array to do length comparisons and filter out empty values
+  // set value of character choices; originally had them each as a big string, but changed to an array to do length comparisons and filter out empty values  
   let speCharValue = ["!", "#", "$", "%", "&", "*", "_", "-", "^", "@"]; 
   let numValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; 
   let upperValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; 
   let lowerValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
 
   /*create random characters based on choices from character type prompts - this is where I was stuck for several hours, because I couldn't figure out 
-  a for loop to generate characters based on choices that were also the right password length. I finally gave up and left this as is. */
+  a for loop to generate characters based on choices that were also the right password length. I finally gave up and left this as is. */  
   if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
   if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
   if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
   if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
    
   /*charAdds is my janky workaround for getting the correct password length. If else doesn't allow me to accurately return values for combos
-  that have more than two character types, but I put together all the possible double combos. It still technically produces a correct password output.*/
+  that have more than two character types, but I put together all the possible double combos. It still technically produces a correct password output.*/  
   let charAdds = "";
 
   if (speChar && num) {charAdds = "!#$%&*_-^@0123456789"}
