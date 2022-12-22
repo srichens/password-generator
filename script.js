@@ -20,13 +20,13 @@ function generatePassword() {
   
 
   
-  passPrompt();
+  //passPrompt();
  
-  function passPrompt() {
+  //function passPrompt() {
     passLength = prompt("How long would you like your password to be? Choose a number between 8 and 128");
     passLength = Number(passLength);  
     while (passLength < 8 || passLength > 128 || isNaN(passLength)) {passLength = prompt("Please choose a number between 8 and 128");} 
-  }
+ // }
   
   charPrompt();
     
@@ -42,10 +42,12 @@ function generatePassword() {
     while (speChar == false && num == false && upper == false && lower == false) {alert("You must chose at least one character choice"); charPrompt();} 
   }
   
-  var speCharValue = ["!", "#", "$", "%", "&", "*", "_", "-", "^", "@"];
-  var numValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  var upperValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  var lowerValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  console.log (passLength);
+
+  let speCharValue = ["!", "#", "$", "%", "&", "*", "_", "-", "^", "@"]; 
+  let numValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]; 
+  let upperValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; 
+  let lowerValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
 
   if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
   if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
@@ -56,12 +58,46 @@ function generatePassword() {
 
   console.log(chosenValues);
 
-  /*if (speChar && num && upper && lower) {chosenChar = speCharValue += numValue += upperValue += lowerValue} else {console.log("no password");}
+  return chosenValues.join('');
 
-  var chosenPassword = "";
+  /*let longerArray = "";
+
+  if (chosenValues.length < passLength) {longerArray = chosenValues.concat(speChar)};
+
+  console.log(chosenValues);
+
+  console.log(longerArray);*/
+
+ 
+//----
+
+
+ /* const chosenValues = []
+  if (speChar) {chosenValues = chosenValues.concat(speCharValue)}
+  if (num) {chosenValues = chosenValues.concat(numValue)}
+  if (upper) {chosenValues = chosenValues.concat(upperValue)}
+  if (lower) {chosenValues = chosenValues.concat(lowerValue)}
+  
+  console.log (chosenValues);*/
+
+
+  /*let chosenPassword = "";
 
   for (var i = 0; i < passLength; i++) {
-    var chosenPassword = chosenChar[Math.floor(Math.random() * chosenChar.length)]
+    chosenPassword = chosenValues[Math.floor(Math.random() * chosenValues.length)]
+  };
+
+  console.log(chosenPassword);*/
+
+ //----    
+
+
+  /*if (speChar && num && upper && lower) {chosenChar = speCharValue += numValue += upperValue += lowerValue} else {console.log("no password");}
+
+  let chosenPassword = "";
+
+  for (var i = 0; i < passLength; i++) {
+    chosenPassword = chosenChar[Math.floor(Math.random() * chosenChar.length)]
   };
 
   console.log(chosenPassword);*/
@@ -80,7 +116,17 @@ function generatePassword() {
   
   let chosenValues = [ speChar, num, upper, lower];
 
-  console.log(chosenValues);*/
+  let longerArray = "";
+
+  if (chosenValues.length < passLength) {longerArray = chosenValues.concat(speCharValue)};
+
+  console.log(chosenValues);
+
+  console.log(longerArray);*/
+
+  //return [speChar + num + upper + lower];
+
+
 
 //-----original code
    
