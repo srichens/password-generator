@@ -20,13 +20,10 @@ function generatePassword() {
   
 
   
-  //passPrompt();
+  passLength = prompt("How long would you like your password to be? Choose a number between 8 and 128");
+  passLength = Number(passLength);  
+  while (passLength < 8 || passLength > 128 || isNaN(passLength)) {passLength = prompt("Please choose a number between 8 and 128");} 
  
-  //function passPrompt() {
-    passLength = prompt("How long would you like your password to be? Choose a number between 8 and 128");
-    passLength = Number(passLength);  
-    while (passLength < 8 || passLength > 128 || isNaN(passLength)) {passLength = prompt("Please choose a number between 8 and 128");} 
- // }
   
   charPrompt();
     
@@ -55,82 +52,44 @@ function generatePassword() {
   if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
   
   let chosenValues = [ speChar, num, upper, lower];
-
-  console.log(chosenValues);
-
-  return chosenValues.join('');
-
-  /*let longerArray = "";
-
-  if (chosenValues.length < passLength) {longerArray = chosenValues.concat(speChar)};
-
-  console.log(chosenValues);
-
-  console.log(longerArray);*/
-
- 
-//----
-
-
- /* const chosenValues = []
-  if (speChar) {chosenValues = chosenValues.concat(speCharValue)}
-  if (num) {chosenValues = chosenValues.concat(numValue)}
-  if (upper) {chosenValues = chosenValues.concat(upperValue)}
-  if (lower) {chosenValues = chosenValues.concat(lowerValue)}
-  
-  console.log (chosenValues);*/
-
-
-  /*let chosenPassword = "";
-
-  for (var i = 0; i < passLength; i++) {
-    chosenPassword = chosenValues[Math.floor(Math.random() * chosenValues.length)]
-  };
-
-  console.log(chosenPassword);*/
-
- //----    
-
-
-  /*if (speChar && num && upper && lower) {chosenChar = speCharValue += numValue += upperValue += lowerValue} else {console.log("no password");}
-
-  let chosenPassword = "";
-
-  for (var i = 0; i < passLength; i++) {
-    chosenPassword = chosenChar[Math.floor(Math.random() * chosenChar.length)]
-  };
-
-  console.log(chosenPassword);*/
-
-  //original code-----
-
-  /*const speCharValue = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
-  const numValue = "0123456789";
-  const upperValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const lowerValue = "abcdefghijklmnopqrstuvwxyz";
-
-  if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
-  if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
-  if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
-  if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
-  
-  let chosenValues = [ speChar, num, upper, lower];
-
-  let longerArray = "";
-
-  if (chosenValues.length < passLength) {longerArray = chosenValues.concat(speCharValue)};
-
-  console.log(chosenValues);
-
-  console.log(longerArray);*/
-
-  //return [speChar + num + upper + lower];
-
-
-
-//-----original code
-   
     
+  let charAdds = "";
+
+  if (speChar) {charAdds = "!#$%&*_-^@0"} else if (num) {charAdds = "0123456789"}
+  else if (upper) {charAdds = "ABCDEFGHIJ"}
+  else {charAdds = "abcdefghijklmnopqrstuvwxyz"};
+
+  console.log(charAdds);
+  console.log(charAdds.length);
+
+  chosenValues  = [speChar + num + upper + lower];
+
+  console.log(chosenValues);
+
+  chosenValues = chosenValues.toString();
+
+  console.log(chosenValues.length);
+
+  console.log(chosenValues);
+
+
+  
+  let charAddsLength = passLength - chosenValues.length;
+  console.log(charAddsLength);
+  let charAddsPass = "";
+
+  for (var i = 0; i < charAddsLength; i++)
+  {var randomNumber = Math.floor(Math.random() * charAdds.length); charAddsPass += charAdds.substring(randomNumber, randomNumber +1);}
+
+ console.log(charAddsPass);
+
+   let newPassword = chosenValues + charAddsPass;
+
+  console.log(newPassword);
+
+  return newPassword;
+
+     
   
 }
  
