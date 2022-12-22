@@ -31,140 +31,46 @@ function generatePassword() {
   charPrompt();
     
   function charPrompt() {
-    speChar = confirm("Include special characters? Press Ok for Yes or Cancel for No");
-    if (speChar) {alert("Your password will include special characters")}
-      else {alert( "Your password will NOT include special characters")};
+    speChar = confirm("Include special characters? Press Ok for Yes or Cancel for No"); 
+    if (speChar) {alert("Your password will include special characters")} else {alert( "Your password will NOT include special characters")};
     num = confirm("Include numbers? Press Ok for Yes or Cancel for No");
-    if (num) {alert("Your password will include numbers")} 
-      else {alert( "Your password will NOT include numbers")};
+    if (num) {alert("Your password will include numbers")} else {alert( "Your password will NOT include numbers")};
     upper = confirm("Include uppercase letters? Press Ok for Yes or Cancel for No");
-    if (upper) {alert("Your password will include uppercase letters")} 
-      else {alert( "Your password will NOT include uppercase letters")};
+    if (upper) {alert("Your password will include uppercase letters")} else {alert( "Your password will NOT include uppercase letters")};
     lower = confirm("Include lowercase letters? Press Ok for Yes or Cancel for No");
-    if (lower) {alert("Your password will include lowercase letters")} 
-      else {alert( "Your password will NOT include lowercase letters")};
+    if (lower) {alert("Your password will include lowercase letters")} else {alert( "Your password will NOT include lowercase letters")};
     while (speChar == false && num == false && upper == false && lower == false) {alert("You must chose at least one character choice"); charPrompt();} 
   }
   
-  /*if (speChar) {speCharVal = "!#$%&()*+,-./:;<=>?@[]^_`{|}~"} else {speCharVal = "";};
-  if (num) {numVal = "0123456789"} else {numVal = "";};
-  if (upper) {upperVal = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"} else {upperVal = "";};
-  if (lower) {lowerVal = "abcdefghijklmnopqrstuvwxyz"} else {lowerVal = "";};
+  const speCharValue = ["!", "#", "$", "%", "&", "*", "_", "-", "^", "@"];
+  const numValue = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  const upperValue = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  const lowerValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-  console.log(speCharVal);
-  console.log(numVal);
-  console.log(upperVal); 
-  console.log(lowerVal);
+  if ((speChar) && (num) && (upper) && (lower)) {chosenChar = [speCharValue, numValue, upperValue, lowerValue]};
 
-  let charValues = [speCharVal + numVal + upperVal + lowerVal]*/
+  console.log(chosenChar);
 
-  //console.log(charValues);
+  //original code-----
 
-  //return charValues;
-
-  /*let chosenPassword = "";
-
-  for (var i = 0; i < passLength; i++) {chosenPassword = charValues[Math.floor(Math.random() * charValues.length)];};
-
-  return chosenPassword;*/
-
-  /*let charValues = {
-    speCharValue: "$_!&%#@?<>",
-    numValue: "0123456789",
-    upperValue: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    lowerValue: "abcdefghijklmnopqrstuvwxyz",
-  };
-  
-  let chosenPassword = "";
-
-  for (var i = 0; i <passLength; i++) {chosenPassword += charValues.charAt(Math.floor(Math.random() * charValues.length));}
-
-  return chosenPassword;*/
-  const speCharValue = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
+  /*const speCharValue = "!#$%&()*+,-./:;<=>?@[]^_`{|}~";
   const numValue = "0123456789";
   const upperValue = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lowerValue = "abcdefghijklmnopqrstuvwxyz";
-    
+
   if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
   if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
   if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
   if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
   
-  let chosenValues = [ speChar,  num, upper, lower];
+  let chosenValues = [ speChar, num, upper, lower];
 
-  console.log (chosenValues);
+  console.log(chosenValues);*/
 
-//console.log (password)
-
-
-  //return chosenValues;
-
- 
-  
-  //console.log(addValues);
-
-  //console.log(chosenValues);
- 
-  //console.log(chosenValues.length);
-
-  //let chosenPassword = chosenValues.toString();
-
- //return chosenPassword;
-        
-  
-  /*let chosenPassword = [speChar + num + upper + lower];
-  
-  console.log(chosenPassword);
- 
-  console.log(chosenPassword.length);*/
-  
-  
-  //if (chosenPassword.length < passLength) {newPass = chosenPassword.push[0]};
-
-  //let newPass = chosenPassword.push[0];
-
-  //console.log(newPass);
-
-
- 
-
-  /*if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
-  if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
-  if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
-  if (lower) {lower = lowerValue[Math.floor(Math.random() * lowerValue.length)];} else {lower = "";};
-
-  let chosenPassword = [speChar, num, upper, lower];
-
-  console.log(chosenPassword);
-  console.log(chosenPassword.length); */
-
-  /*createPass();
-
-  function createPass() {
-    let newPass = '';
-    let passLength = chosenPassword.length;
-    for ( let i=0; i < length; i++) {result += chosenPassword.charAt(Math.)}
-  }
- console.log(newPass);*/
-  /*let chosenPassword = [speChar, num, upper, lower];
-
-  console.log(chosenPassword);
-  console.log(chosenPassword.length);*/
-
-  /*createPass();
-
-  function createPass(){
-    let i = chosenPassword.length;
-    console.log(i);
-    for (let i = 0; i < chosenPassword.length; i++); 
-    console.log(chosenPassword[i]);
-    //newPassword = chosenPassword[Math.floor(Math.random() * passLength)];
-  }*/
-  //console.log(passLength);
-
-
+//-----original code
+   
     
-  //return speChar + num + upper + lower;
+  
 }
  
 
