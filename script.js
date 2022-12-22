@@ -13,7 +13,6 @@ function writePassword() {
 //------------------my added code below: wrote function generatePassword() that is called above----------------
 
 function generatePassword() {
-  
   // password prompt that requires certain length (*fullfills acceptance criteria*)
   let passLength = prompt("How long would you like your password to be? Choose a number between 8 and 128");
   passLength = Number(passLength);  
@@ -48,7 +47,7 @@ function generatePassword() {
   let lowerValue = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
 
   /*create random characters based on choices from character type prompts - this is where I was stuck for several hours, because I couldn't figure out 
-    a for loop to generate characters based on choices that were also the right password length. I finally gave up and left this as is. */
+  a for loop to generate characters based on choices that were also the right password length. I finally gave up and left this as is. */
   if (speChar) {speChar = speCharValue[Math.floor(Math.random() * speCharValue.length)];} else {speChar = "";};
   if (num) {num = numValue[Math.floor(Math.random() * numValue.length)];} else {num = "";};
   if (upper) {upper = upperValue[Math.floor(Math.random() * upperValue.length)];} else {upper = "";};
@@ -60,7 +59,7 @@ function generatePassword() {
 
   if (speChar && num) {charAdds = "!#$%&*_-^@0123456789"}
   else if (speChar && upper) {charAdds = "!#$%&*_-^@ABCDEFGHIJKLMNOPQRSTUVWXYZ"} 
-  else if (speChar && lower) {charAdds = "!#$%&*_-^abcdefghijklmnopqrstuvwxyz"}
+  else if (speChar && lower) {charAdds = "!#$%&*_-^@abcdefghijklmnopqrstuvwxyz"}
   else if (num && upper) {charAdds = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
   else if (num && lower) {charAdds = "0123456789abcdefghijklmnopqrstuvwxyz"}
   else if (upper && lower) {charAdds = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"}
@@ -75,8 +74,13 @@ function generatePassword() {
 
   chosenValues = chosenValues.toString();
 
+  console.log(passLength);
+  console.log(chosenValues.length);
+
   let charAddsLength = passLength - chosenValues.length;
-  
+
+  console.log(charAddsLength);
+    
   //add specified charAdds to get right password length
   let charAddsPass = "";
 
